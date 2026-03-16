@@ -1,5 +1,9 @@
 # Philiprehberger.Hashing
 
+[![CI](https://github.com/philiprehberger/dotnet-hashing/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/dotnet-hashing/actions/workflows/ci.yml)
+[![NuGet](https://img.shields.io/nuget/v/Philiprehberger.Hashing.svg)](https://www.nuget.org/packages/Philiprehberger.Hashing)
+[![License](https://img.shields.io/github/license/philiprehberger/dotnet-hashing)](LICENSE)
+
 Convenient, secure hashing API — password hashing, HMAC, checksums, and consistent hashing.
 
 ## Install
