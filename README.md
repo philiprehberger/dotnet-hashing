@@ -88,6 +88,12 @@ var isEqual = Hasher.SecureEquals(hashA, hashB); // constant-time
 | `AddNode(T node)` | Add a node to the ring |
 | `RemoveNode(T node)` | Remove a node from the ring |
 
+## Development
+
+```bash
+dotnet build src/Philiprehberger.Hashing.csproj --configuration Release
+```
+
 ## License
 
 MIT
