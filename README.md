@@ -6,7 +6,7 @@
 
 Convenient, secure hashing API — password hashing, HMAC, checksums, and consistent hashing.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Philiprehberger.Hashing
