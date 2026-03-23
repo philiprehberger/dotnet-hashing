@@ -7,9 +7,9 @@
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <PackageId>Philiprehberger.Hashing</PackageId>
-    <Version>0.1.6</Version>
+    <Version>0.1.7</Version>
     <Authors>Philip Rehberger</Authors>
-    <Description>Convenient, secure hashing API — password hashing, HMAC, checksums, and consistent hashing</Description>
+    <Description>Convenient, secure hashing API — password hashing, HMAC, checksums, and consistent hashing.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/philiprehberger/dotnet-hashing</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
