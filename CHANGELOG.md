@@ -1,14 +1,18 @@
 # Changelog
-n## 0.1.4 (2026-03-17)
+n## 0.1.5 (2026-03-22)
+
+- Add dates to changelog entries
+
+## 0.1.4 (2026-03-17)
 
 - Rename Install section to Installation in README per package guide
 
-## 0.1.3
+## 0.1.3 (2026-03-16)
 
 - Add Development section to README
 - Add GenerateDocumentationFile, RepositoryType, PackageReadmeFile to .csproj
 
-## 0.1.0 (2026-03-15)
+## 0.1.0 (2026-03-16)
 
 - Initial release
 - Password hashing with PBKDF2-SHA256 (configurable iterations, rehash detection)
