@@ -2,8 +2,7 @@
 
 [![CI](https://github.com/philiprehberger/dotnet-hashing/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/dotnet-hashing/actions/workflows/ci.yml)
 [![NuGet](https://img.shields.io/nuget/v/Philiprehberger.Hashing.svg)](https://www.nuget.org/packages/Philiprehberger.Hashing)
-[![License](https://img.shields.io/github/license/philiprehberger/dotnet-hashing)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/dotnet-hashing)](https://github.com/philiprehberger/dotnet-hashing/commits/main)
 
 Convenient, secure hashing API — password hashing, HMAC, checksums, and consistent hashing.
 
@@ -94,6 +93,24 @@ var isEqual = Hasher.SecureEquals(hashA, hashB); // constant-time
 ```bash
 dotnet build src/Philiprehberger.Hashing.csproj --configuration Release
 ```
+
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/dotnet-hashing)
+
+🐛 [Report issues](https://github.com/philiprehberger/dotnet-hashing/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/dotnet-hashing/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
 
 ## License
 
