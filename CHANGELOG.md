@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0 (2026-03-31)
+
+- Add enhanced password hashing with PBKDF2-SHA512 (v2 format with 256-bit salt, 512-bit hash)
+- Add cryptographically secure password generation via PasswordGenerator
+- Add hash migration detection for upgrading from v1 to v2 format
+
 ## 0.1.9 (2026-03-31)
 
 - Standardize README to 3-badge format with emoji Support section

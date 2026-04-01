@@ -4,7 +4,7 @@
 [![NuGet](https://img.shields.io/nuget/v/Philiprehberger.Hashing.svg)](https://www.nuget.org/packages/Philiprehberger.Hashing)
 [![Last updated](https://img.shields.io/github/last-commit/philiprehberger/dotnet-hashing)](https://github.com/philiprehberger/dotnet-hashing/commits/main)
 
-Convenient, secure hashing API — password hashing, HMAC, checksums, and consistent hashing.
+Password hashing with PBKDF2-SHA256/SHA512, secure password generation, HMAC, checksums, and consistent hashing.
 
 ## Installation
 
@@ -22,6 +22,35 @@ using Philiprehberger.Hashing;
 var hash = Hasher.Password.Hash("my-secret-password");
 var isValid = Hasher.Password.Verify("my-secret-password", hash); // true
 var needsRehash = Hasher.Password.NeedsRehash(hash);
+```
+
+### Enhanced Password Hashing
+
+```csharp
+// Use PBKDF2-SHA512 with 256-bit salt and 512-bit hash (v2 format)
+var hash = Hasher.Password.Hash("my-secret-password", useEnhanced: true);
+var isValid = Hasher.Password.Verify("my-secret-password", hash); // true (auto-detects format)
+```
+
+### Password Generation
+
+```csharp
+var password = Hasher.Password.Generate();           // 16-char with all character sets
+var longer = Hasher.Password.Generate(length: 32);   // 32-char password
+var alphanumeric = Hasher.Password.Generate(includeSymbols: false); // no symbols
+```
+
+### Hash Migration
+
+```csharp
+var oldHash = Hasher.Password.Hash("password");                     // v1 format
+var needsMigration = Hasher.Password.NeedsMigration(oldHash);       // true
+
+// Migrate on next login
+if (Hasher.Password.Verify("password", oldHash) && Hasher.Password.NeedsMigration(oldHash))
+{
+    var newHash = Hasher.Password.Hash("password", useEnhanced: true); // v2 format
+}
 ```
 
 ### HMAC
@@ -60,9 +89,11 @@ var isEqual = Hasher.SecureEquals(hashA, hashB); // constant-time
 
 | Method | Description |
 |--------|-------------|
-| `Hash(string password)` | Hash a password using PBKDF2 |
-| `Verify(string password, string hash)` | Verify a password against a hash |
-| `NeedsRehash(string hash)` | Check if hash needs to be rehashed |
+| `Hash(string password, int iterations, bool useEnhanced)` | Hash a password using PBKDF2 (v1 SHA-256 or v2 SHA-512) |
+| `Verify(string password, string hash)` | Verify a password against a hash (auto-detects format) |
+| `NeedsRehash(string hash, int iterations)` | Check if hash needs to be rehashed |
+| `NeedsMigration(string hash)` | Check if hash uses v1 format and should migrate to v2 |
+| `Generate(int length, bool, bool, bool, bool)` | Generate a cryptographically secure random password |
 
 ### `Hasher.Hmac`
 
@@ -92,6 +123,7 @@ var isEqual = Hasher.SecureEquals(hashA, hashB); // constant-time
 
 ```bash
 dotnet build src/Philiprehberger.Hashing.csproj --configuration Release
+dotnet test tests/Philiprehberger.Hashing.Tests/Philiprehberger.Hashing.Tests.csproj
 ```
 
 ## Support
